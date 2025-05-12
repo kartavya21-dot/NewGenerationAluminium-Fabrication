@@ -1,0 +1,28 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    z-index: 100;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    height: 10dvh;
+    /* justify-content: center; */
+    align-items: center;
+}
+img{
+    position: relative;
+    left: 15px;
+    width: 50px;
+}
+ul {
+    position: relative;
+    left: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+li{
+    font-size: 0.78rem;
+}
