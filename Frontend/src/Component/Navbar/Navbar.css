@@ -17,6 +17,7 @@ img{
     width: 50px;
 }
 ul {
+    margin-left: 30px;
     position: relative;
     left: 50px;
     display: flex;
@@ -24,5 +25,5 @@ ul {
     gap: 0.8rem;
 }
 li{
-    font-size: 0.78rem;
+    font-size: 1rem;
 }
