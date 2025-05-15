@@ -1,0 +1,9 @@
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+    gap: 5px;
+    row-gap: 30px;
+    justify-items: center;
+    align-items: center;
+}

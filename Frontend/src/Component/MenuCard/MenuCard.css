@@ -1,0 +1,58 @@
+.menu-card{
+    /* border: 1px solid black; */
+    background-color: rgb(255, 255, 255);
+    /* border-radius: 10px; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 110px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* gap: 10px; */
+    align-items: center;
+}
+
+.image-container {
+    /* border: 1px solid red; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 10px 10px 0 0;
+    margin: auto;
+    position: relative;
+    width: 100px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.details{
+    /* border: 1px solid blue; */
+    height: 30%;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 5px;
+    justify-content: space-between;
+    position: relative;
+    bottom: 0;
+}
+
+.details h4{
+    position: relative;
+    bottom: 0px;
+    font-size: 0.7rem;
+}
+
+.details h5{
+    position: relative;
+    bottom: 3px;
+    font-size: 0.5rem;
+}
