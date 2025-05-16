@@ -3,6 +3,7 @@ import Header from '../../Component/Header/Header'
 import Category from '../../Component/Category/Category'
 import MenuCard from '../../Component/MenuCard/MenuCard'
 import Menu from '../../Component/Menu/Menu'
+import AboutUs from '../../Component/AboutUs/AboutUs'
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
         <Header/>
         <Category/>
         <Menu/>
-        {/* <MenuCard/> */}
+        <AboutUs/>
     </div>
   )
 }
