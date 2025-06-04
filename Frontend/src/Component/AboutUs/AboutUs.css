@@ -1,0 +1,21 @@
+.about-us{
+    /* border: 1px solid blue; */
+    background-color: rgb(185, 179, 179);
+    border-radius: 15px;
+    display: flex;
+    width: 70%;
+    margin: 30px auto 0;
+}
+.text-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px;
+}
+.paragraph{
+    line-height: 19px;
+    font-size: 1rem;
+}
+.image{
+    display: none;
+}

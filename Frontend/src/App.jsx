@@ -1,7 +1,7 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './Component/Navbar/Navbar'
 import Home from './Pages/Home/Home'
+import Footer from './Component/Footer/Footer'
 
 function App() {
 
@@ -9,6 +9,7 @@ function App() {
     <>
       <Navbar/>
       <Home/>
+      <Footer/>
     </>
   )
 }

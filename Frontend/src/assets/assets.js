@@ -22,6 +22,8 @@ import railingFitting from './product/railing_fitting.png';
 import railingElevation from './product/railing_elevation.png';
 import ssRailing from './product/ss_railing.png';
 
+import businessManPhoto from './businessMan.jpg'
+
 export const category = [
     {
         name: 'Acrylic',
@@ -146,3 +148,8 @@ export const menu_items = [
     category: "Railing"
   }
 ];
+
+export const photo = {
+    name: "Photo Of Owner",
+    image: businessManPhoto
+}

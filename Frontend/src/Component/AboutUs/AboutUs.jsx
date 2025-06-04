@@ -1,15 +1,16 @@
 import React from 'react'
 import './AboutUs.css'
+import { photo } from '../../assets/assets'
 
 const AboutUs = () => {
   return (
     <div className='about-us'>
         <div className="text-area">
-            <p className='paragraph'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam ipsum deleniti accusantium fugit illo. Doloremque tempora, repellendus impedit adipisci saepe minima!</p>
-            <h1 className='heading'></h1>
+            <p className='paragraph'>We believe in creating long-lasting products that blend durability with aesthetics, enhancing and beautifying the environment.</p>
+            <h1 className='heading'>-Dinesh Sharma</h1>
         </div>
         <div className="image">
-            <img src="" alt="" />
+            <img src={photo.image} alt={photo.name} />
         </div>
     </div>
   )
