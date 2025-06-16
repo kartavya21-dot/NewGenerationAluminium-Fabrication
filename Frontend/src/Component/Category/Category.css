@@ -11,7 +11,7 @@
 .category-list{
     display: flex;
     background-color: rgba(0, 0, 0, 0.812);
-    height: 10rem;
+    height: 130px;
     justify-content: space-between;
     align-items: center;
     gap: 17px;
@@ -20,6 +20,7 @@
     padding: 10px 20px;
     /* padding-top: 10px; */
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-behavior: smooth;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -32,11 +33,12 @@
     /* border: 1px solid red; */
     background-color: rgb(216, 216, 216);
     border-radius: 10px;
-    width: 30vw;    
+    width: 40vw;
     padding: 9px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .category-type-image {
@@ -44,11 +46,12 @@
     border-radius: 5px;
     position: inherit;
     display: block;
-    width: 20vw;
-    height: 12vh;
     object-fit: cover;  /* crop to fit */
+    width: 50px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
 }
 
 .category-type-name{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }

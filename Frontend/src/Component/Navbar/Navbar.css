@@ -1,28 +1,74 @@
 .navbar{
+    /* border: 1px solid red; */
     position: fixed;
     top: 0;
     background-color: rgb(240, 240, 240);
     width: 100%;
     z-index: 100;
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
-    height: 10dvh;
-    /* justify-content: center; */
+    height: 8dvh;
+    justify-content: center;
+}
+.navbar-image-container{
+    border: 1px solid red;
+    width: 15%;
+    height: 100%;
+    padding: 7px;
+}
+.logo-image{
+    /* border: 1px solid blue; */
+    width: 90%;
+    height: 90%;
+}
+.navbar ul{
+    border: 1px solid green;
+    width: 85%;
+    display: flex;
+    gap: 2rem;
     align-items: center;
+    justify-content: center;
 }
-img{
-    position: relative;
-    left: 15px;
-    width: 50px;
+.navbar > ul > li{
+    font-size: 0.7rem;
 }
-ul {
-    margin-left: 30px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 0.8rem;
+
+
+
+@media screen and (max-width: 375px){
+      
 }
-li{
-    font-size: 0.8rem;
+
+@media (min-width: 500px) { 
+   .navbar > ul > li{
+    font-size: 1rem;
+   }
 }
+
+/* Small devices (landscape phones, ≥576px) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .navbar{
+        height: 10dvh;
+    }
+    .navbar-image-container{
+        width: 20%;
+    }
+    .navbar > ul > li{
+        font-size: 1rem;
+    }
+}
+
+/* Medium devices (tablets, ≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .navbar > ul > li{
+        font-size: 1rem;
+    }
+}
+
+/* Large devices (desktops, ≥992px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    
+ }
+
+/* Extra large devices (large desktops, ≥1200px) */
+@media (min-width: 1200px) { }

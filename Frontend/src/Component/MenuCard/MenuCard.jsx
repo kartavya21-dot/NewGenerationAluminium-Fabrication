@@ -10,7 +10,7 @@ const MenuCard = ({ name, rate, image }) => {
       </div>
       <div className="details">
         <h4>{name}</h4>
-        <h5>{rate}</h5>
+        <h5>₹ {rate}</h5>
       </div>
     </div>
   );
