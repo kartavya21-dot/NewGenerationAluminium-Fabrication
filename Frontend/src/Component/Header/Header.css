@@ -92,10 +92,15 @@
 /* Extra large devices (large desktops, ≥1200px) */
 @media (min-width: 1200px) { 
     .header{
-        margin-top: 7dvh;
+        width: 70%;
+        height: 70dvh;
+        margin-top: 9dvh;
+    }
+    .header::before{
+        background-size: cover;
     }
     .header h1{
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .header p{
         font-size: 1.5rem;
