@@ -87,3 +87,25 @@
         width: 72px;
     }
 }
+
+@media (min-width: 1500px) {
+    .category-heading{
+        font-size: 4rem;
+    }
+    .category-list{
+        height: 230px;
+        justify-content: flex-start;
+        gap: 25px;
+    }
+    .category-type{
+        width: 150px;
+        height: 190px;
+    }
+    .category-type-name{
+        font-size: 1.2rem;
+    }
+    .category-type-image{
+        height: 90%;
+        width: 90%;
+    }
+}

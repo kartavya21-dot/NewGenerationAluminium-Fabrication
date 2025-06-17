@@ -5,12 +5,11 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     /* width: 110px;
     height: 150px; */
-    width: 30dvw;
+    width: 90%;
     height: 25dvh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* gap: 10px; */
     align-items: center;
 }
 
@@ -59,9 +58,72 @@
     font-size: 0.5rem;
 }
 
-/* @media screen and (min-width: 450px) and (max-width: 750px){
+@media screen and (min-width: 730px) and (max-width: 1099px){
     .menu-card{
         width: 140px;
         height: 225px;
     }
-} */
+    .menu-card > .image-container{
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 120px;
+    }
+    .details h4{
+        font-size: 0.9rem;
+    }
+    .details h5{
+        font-size: 0.7rem;
+        bottom: 16px;
+    }
+}
+
+@media (min-width: 1100px) {
+    .menu-card{
+        width: 90%;
+        /* margin: auto; */
+        height: 250px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    .menu-card > .image-container{
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 150px;
+    }
+    .details{
+        /* border: 1px solid blue; */
+    }
+    .details h4{
+        font-size: 0.96rem;
+    }
+    .details h5{
+        font-size: 0.7rem;
+        bottom: 16x;
+    }
+}
+
+@media (min-width: 1400px) {
+    .menu-card{
+        width: 95%;
+        /* margin: auto; */
+        height: 350px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+    }
+    .menu-card > .image-container{
+        /* border: 1px solid red; */
+        width: 100%;
+        height: 150px;
+    }
+    .details{
+        /* border: 1px solid blue; */
+    }
+    .details h4{
+        font-size: 1.3rem;
+    }
+    .details h5{
+        position: relative;
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+    }
+}
