@@ -6,6 +6,7 @@ import binds from './Binds.jpg'
 import pillar from './Pillars.jpg'
 import railing from './Railing.jpg'
 import wardrobe from './Wardrobe.jpg'
+import logoimg from './logo.png'
 
 import ssElevationRailing from './product/ss_elevation_railing.png';
 import washroomGate from './product/washroom_gate.png';
@@ -152,4 +153,8 @@ export const menu_items = [
 export const photo = {
     name: "Photo Of Owner",
     image: businessManPhoto
+}
+
+export const logo = {
+  image: logoimg
 }
