@@ -4,13 +4,20 @@ import Category from '../../Component/Category/Category'
 import MenuCard from '../../Component/MenuCard/MenuCard'
 import Menu from '../../Component/Menu/Menu'
 import AboutUs from '../../Component/AboutUs/AboutUs'
+import { useState } from 'react'
 
 const Home = () => {
+
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   return (
     <div>
         <Header/>
-        <Category/>
-        <Menu/>
+        <Category
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+        <Menu selectedCategory={selectedCategory} />
         <AboutUs/>
     </div>
   )
