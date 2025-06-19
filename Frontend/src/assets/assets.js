@@ -66,85 +66,85 @@ export const category = [
 export const menu_items = [
   {
     name: "SS Elevation Railing",
-    image: ssElevationRailing,
+    images: [ssElevationRailing, washroomGate, al_wardrobe, ventilation, glassPartitionDoor, mosquitoNetDoor, acrylic, domalSectionWindow, wardrobe, washroomGate, window, railing, railingDesign, railingElevation],
     rate: 1200,
     category: "Railing"
   },
   {
     name: "Washroom Gate",
-    image: washroomGate,
+    images: [washroomGate],
     rate: 1800,
     category: "Door"
   },
   {
     name: "Wardrobe",
-    image: al_wardrobe,
+    images: [al_wardrobe],
     rate: 2000,
     category: "Wardrobe"
   },
   {
     name: "Ventilation",
-    image: ventilation,
+    images: [ventilation],
     rate: 500,
     category: "Window"
   },
   {
     name: "12mm Glass Door",
-    image: glassPartitionDoor,
+    images: [glassPartitionDoor],
     rate: 2500,
     category: "Door"
   },
   {
     name: "Mosquito Net Door",
-    image: mosquitoNetDoor,
+    images: [mosquitoNetDoor],
     rate: 1000,
     category: "Door"
   },
   {
     name: "Railing",
-    image: railingDesign,
+    images: [railingDesign],
     rate: 1100,
     category: "Railing"
   },
   {
     name: "SS Front Gate",
-    image: ssFrontGate,
+    images: [ssFrontGate],
     rate: 3000,
     category: "Door"
   },
   {
     name: "Domal Section Window",
-    image: domalSectionWindow,
+    images: [domalSectionWindow],
     rate: 1600,
     category: "Window"
   },
   {
     name: "Tuffen Glass Railing",
-    image: tuffenGlassRailing,
+    images: [tuffenGlassRailing],
     rate: 2100,
     category: "Railing"
   },
   {
     name: "Glass Balcony",
-    image: glassBalcony,
+    images: [glassBalcony],
     rate: 2500,
     category: "Railing"
   },
   {
     name: "Railing Fitting",
-    image: railingFitting,
+    images: [railingFitting],
     rate: 400,
     category: "Railing"
   },
   {
     name: "Railing Elevation",
-    image: railingElevation,
+    images: [railingElevation],
     rate: 1500,
     category: "Railing"
   },
   {
     name: "SS Railing",
-    image: ssRailing,
+    images: [ssRailing],
     rate: 1400,
     category: "Railing"
   }

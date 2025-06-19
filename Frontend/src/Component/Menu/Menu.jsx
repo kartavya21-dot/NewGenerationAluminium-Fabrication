@@ -12,7 +12,7 @@ const Menu = ({ selectedCategory }) => {
         {
             filteredProduct.map((item, index) => {
                 return(
-                    <MenuCard name={item.name} rate={item.rate} image={item.image}></MenuCard>
+                    <MenuCard name={item.name} rate={item.rate} image={item.images[0]}></MenuCard>
                 )
             })
         }

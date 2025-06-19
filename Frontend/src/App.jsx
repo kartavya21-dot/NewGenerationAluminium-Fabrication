@@ -13,8 +13,8 @@ function App() {
     <div className='app'>
       <Navbar/>
       <div className="main-content">
-        <Home/>
-        {/* <ProductDetail product={menu_items[0]}/> */}
+        {/* <Home/> */}
+        <ProductDetail product={menu_items[0]}/>
       </div>
       <Footer/>
     </div>

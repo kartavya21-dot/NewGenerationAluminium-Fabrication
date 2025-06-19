@@ -20,6 +20,7 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
         {category.map((item, index) => {
           return (
             <div
+              key={index}
               className={item.name === selectedCategory ? 'category-type active' : 'category-type'}
             //   className="category-type"
               onClick={() => handleCategoryClick(item.name)}
