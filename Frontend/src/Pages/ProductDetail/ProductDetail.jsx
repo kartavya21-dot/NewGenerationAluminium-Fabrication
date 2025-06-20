@@ -23,6 +23,8 @@ const ProductDetail = ({ product }) => {
         <p className="product-details-price">₹ {product.rate}</p>
       </div>
 
+      <hr />
+
       <div className="product-header-section">
         <button className="left-button" onClick={leftClick}><FaArrowCircleLeft /></button>
         <div className="main-image">
@@ -31,6 +33,8 @@ const ProductDetail = ({ product }) => {
         <button className="right-button" onClick={rightClick}><FaArrowCircleRight /></button>
       </div>
 
+      <hr />
+      
       <div className="gallery">
         {product.images.map((item, index) => {
           return (
