@@ -14,7 +14,7 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
   };
 
   return (
-    <div className="category">
+    <div className="category" id="category">
       <h1 className="category-heading">Categories</h1>
       <div className="category-list">
         {category.map((item, index) => {

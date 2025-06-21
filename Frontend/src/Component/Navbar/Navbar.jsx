@@ -1,5 +1,5 @@
 import React from 'react'
-import reactLogo from '../../assets/react.svg'
+import { Link } from 'react-router-dom'; 
 import './Navbar.css'
 import { logo } from '../../assets/assets'
 
@@ -10,10 +10,10 @@ const Navbar = () => {
           <img className='logo-image' src={logo.image} alt='logo'></img>
         </div>
         <ul>
-            <li>HOME</li>
-            <li>SERVICES</li>
-            <li>CONTACT US</li>
-            <li>ABOUT US</li>
+            <Link to="/"><li>HOME</li></Link>
+            <a href='#category'><li>SERVICES</li></a>
+            <a href='#about-us'><li>ABOUT US</li></a>
+            <a href='#header'><li>CONTACT US</li></a>
         </ul>
     </nav>
   )

@@ -2,6 +2,7 @@ import React from 'react'
 import { menu_items } from "../../assets/assets";
 import MenuCard from '../MenuCard/MenuCard'
 import "./Menu.css"
+import { Link } from 'react-router-dom';
 
 const Menu = ({ selectedCategory }) => {
 
@@ -12,7 +13,9 @@ const Menu = ({ selectedCategory }) => {
         {
             filteredProduct.map((item, index) => {
                 return(
-                    <MenuCard name={item.name} rate={item.rate} image={item.images[0]}></MenuCard>
+                    <Link to={`product/${index}`}>
+                      <MenuCard name={item.name} rate={item.rate} image={item.images[0]}></MenuCard>
+                    </Link>
                 )
             })
         }
