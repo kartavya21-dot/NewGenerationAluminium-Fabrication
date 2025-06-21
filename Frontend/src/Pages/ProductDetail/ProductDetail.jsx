@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./ProductDetail.css";
 import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import { menu_items } from "../../assets/assets";
 
-const ProductDetail = ({ product }) => {
+const ProductDetail = () => {
   const [imageIndex, setImageIndex] = useState(0);
+  const { id } = useParams();
+  const product = menu_items[parseInt(id)];
 
   const handleThumbnailClick = (index) => setImageIndex(index);
 

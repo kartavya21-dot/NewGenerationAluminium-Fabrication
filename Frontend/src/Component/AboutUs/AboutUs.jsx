@@ -4,7 +4,7 @@ import { photo } from "../../assets/assets";
 
 const AboutUs = () => {
   return (
-    <div className="about-us">
+    <div className="about-us" id="about-us">
       <div className="image">
           <img src={photo.image} alt={photo.name} />
       </div>

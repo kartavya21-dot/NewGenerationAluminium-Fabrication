@@ -9,6 +9,11 @@
   font-style: normal;
   list-style: none;
 }
-/* 
-.font {
-} */
+a {
+  color: black; /* or your desired color */
+  text-decoration: none;
+}
+
+a:visited {
+  color: black; /* keep the color the same */
+}

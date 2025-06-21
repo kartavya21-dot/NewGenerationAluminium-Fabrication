@@ -2,6 +2,7 @@ import React from 'react'
 import reactLogo from '../../assets/react.svg'
 import './Navbar.css'
 import { logo } from '../../assets/assets'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -10,10 +11,10 @@ const Navbar = () => {
           <img className='logo-image' src={logo.image} alt='logo'></img>
         </div>
         <ul>
-            <li>HOME</li>
-            <li>SERVICES</li>
-            <li>CONTACT US</li>
-            <li>ABOUT US</li>
+            <li><Link to={"/"}>HOME</Link></li>
+            <li><a href="#category">SERVICES</a></li>
+            <li><a href="#header">CONTACT US</a></li>
+            <li><a href="#about-us">ABOUT US</a></li>
         </ul>
     </nav>
   )
