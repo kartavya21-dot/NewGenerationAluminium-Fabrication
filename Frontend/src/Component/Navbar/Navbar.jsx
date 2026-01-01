@@ -1,22 +1,57 @@
-import React from 'react'
-import { Link } from 'react-router-dom'; 
-import './Navbar.css'
-import { logo } from '../../assets/assets'
+import React, { useState } from "react";
+import "./Navbar.css";
+import { Link } from "react-router-dom";
+import { logo } from "../../assets/assets";
 
 const Navbar = () => {
-  return (
-    <nav className='navbar'>
-        <div className="navbar-image-container">
-          <img className='logo-image' src={logo.image} alt='logo'></img>
-        </div>
-        <ul>
-            <Link to="/"><li>HOME</li></Link>
-            <a href='#category'><li>SERVICES</li></a>
-            <a href='#about-us'><li>ABOUT US</li></a>
-            <a href='#header'><li>CONTACT US</li></a>
-        </ul>
-    </nav>
-  )
-}
+  const [menu, setMenu] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-export default Navbar
+  return (
+    <div className="navbar">
+      <Link to="/" className="logo">
+        <img src={ logo.image } alt="none" />
+      </Link>
+
+      <ul className={`navbar-menu ${isMobileMenuOpen ? "mob-active" : ""}`}>
+        <Link
+          to="/"
+          onClick={() => setMenu("home")}
+        >
+          Home
+        </Link>
+        <a
+          href="#menu"
+          onClick={() => setMenu("menu")}
+        >
+          Menu
+        </a>
+        <a
+          href="#about-us"
+          onClick={() => setMenu("about")}
+        >
+          About Us
+        </a>
+        <a
+          href="#contact"
+          onClick={() => setMenu("contact")}
+        >
+          Contact
+        </a>
+      </ul>
+
+      <div className="navbar-right">
+        <div
+          className="navbar-hamburger"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <span className={`bar ${isMobileMenuOpen ? "open" : ""}`}></span>
+          <span className={`bar ${isMobileMenuOpen ? "open" : ""}`}></span>
+          <span className={`bar ${isMobileMenuOpen ? "open" : ""}`}></span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

@@ -1,130 +1,130 @@
-.menu-card{
-    /* border: 1px solid black; */
-    background-color: rgb(255, 255, 255);
-    border-radius: 3px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    /* width: 110px;
-    height: 150px; */
-    width: 90%;
-    height: 25dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    cursor: pointer;
+.menu-card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+    rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
 .image-container {
-    /* border: 1px solid red; */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 10px 10px 0 0;
-    margin: auto;
-    position: relative;
-    width: 100px;
-    height: 80px;
-    overflow: hidden;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  background-color: #f9fafb;
 }
 
 .image-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 15px;
+  transition: transform 0.4s ease;
+}
+
+.menu-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+.details {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.details h4 {
+  position: static;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.details h5 {
+  position: static;
+  font-size: 1.05rem;
+  color: #2563eb;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 730px) and (max-width: 1099px) {
+  .menu-card {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-}
-
-.details{
-    /* border: 1px solid blue; */
-    height: 30%;
+  }
+  .menu-card > .image-container {
     width: 100%;
-    border-radius: 0 0 10px 10px;
-    display: flex;
-    flex-direction: column;
-    padding: 0px 5px;
-    justify-content: space-between;
-    position: relative;
-    bottom: 0;
-}
-
-.details h4{
-    position: relative;
-    bottom: 0px;
-    font-size: 0.7rem;
-}
-
-.details h5{
-    position: relative;
-    bottom: 10px;
-    font-size: 0.5rem;
-}
-
-@media screen and (min-width: 730px) and (max-width: 1099px){
-    .menu-card{
-        width: 140px;
-        height: 225px;
-    }
-    .menu-card > .image-container{
-        /* border: 1px solid red; */
-        width: 100%;
-        height: 120px;
-    }
-    .details h4{
-        font-size: 0.9rem;
-    }
-    .details h5{
-        font-size: 0.7rem;
-        bottom: 16px;
-    }
+    height: 160px;
+  }
+  .details h4 {
+    font-size: 1.2rem;
+  }
+  .details h5 {
+    font-size: 1.1rem;
+  }
 }
 
 @media (min-width: 1100px) {
-    .menu-card{
-        width: 90%;
-        /* margin: auto; */
-        height: 250px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: 10px;
-    }
-    .menu-card > .image-container{
-        /* border: 1px solid red; */
-        width: 100%;
-        height: 150px;
-    }
-    .details{
-        /* border: 1px solid blue; */
-    }
-    .details h4{
-        font-size: 0.96rem;
-    }
-    .details h5{
-        font-size: 0.7rem;
-        bottom: 16x;
-    }
+  .menu-card {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+  }
+  .menu-card > .image-container {
+    width: 100%;
+    height: 180px;
+  }
+  .details h4 {
+    font-size: 1.25rem;
+  }
+  .details h5 {
+    font-size: 1.15rem;
+  }
 }
 
 @media (min-width: 1400px) {
-    .menu-card{
-        width: 95%;
-        /* margin: auto; */
-        height: 350px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        gap: 10px;
-    }
-    .menu-card > .image-container{
-        /* border: 1px solid red; */
-        width: 100%;
-        height: 150px;
-    }
-    .details{
-        /* border: 1px solid blue; */
-    }
-    .details h4{
-        font-size: 1.3rem;
-    }
-    .details h5{
-        position: relative;
-        font-size: 0.9rem;
-        margin-bottom: 16px;
-    }
+  .menu-card {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+  }
+  .menu-card > .image-container {
+    width: 100%;
+    height: 200px;
+  }
+  .details h4 {
+    font-size: 1.4rem;
+  }
+  .details h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
 }

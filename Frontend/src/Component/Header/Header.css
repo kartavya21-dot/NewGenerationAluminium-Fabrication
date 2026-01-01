@@ -1,116 +1,77 @@
 .header {
-    position: relative;
-    background-color: rgb(0, 0, 0); /* fallback color */
-    margin: 17dvw auto 0px;
-    width: 100%;
-    height: 70vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2vw;
-    overflow: hidden; /* optional: keeps pseudo-element contained */
-    z-index: 1;
+  margin: 30px auto;
+  position: relative;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 1400px;
+  overflow: hidden;
 }
 
-.header::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: url('../../assets/banner.png') no-repeat center center;
-    background-size: contain; /* or 'contain' if you prefer */
-    opacity: 0.6; /* set desired opacity */
-    z-index: -1;
+.header-img {
+  width: 100%;
+  opacity: 95%;
+  height: auto;
+  min-height: 300px;
+  object-fit: cover;
+  display: block;
 }
 
-.header h1 {
-    font-size: 2rem;
-    z-index: 1; /* ensures it's above the background */
-    text-align: center;
-    width: 70%;
-    color: white;
-    font-weight: 800;
+.header-contents {
+  position: absolute;
+  bottom: 25%;
+  left: 6vw;
+  max-width: 50%;
+  animation: fadeIn 2s;
 }
 
-.header p {
-    /* border: 1px solid red; */
-    font-size: 0.8rem;
-    z-index: 1;
-    color: white;
-    width: 70%;
-    text-align: center;
+.header-contents h2 {
+  font-weight: 600;
+  color: white;
+  font-size: max(4.5vw, 22px);
+  margin-bottom: 20px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-.header-btn {
-    position: relative;
-    top: 10px;
-    height: 10px;
+.header-contents p {
+  color: white;
+  font-size: max(1.2vw, 14px);
+  margin-bottom: 30px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  line-height: 1.5;
 }
 
-
-@media (max-width: 575.98px) { 
-    
+.header-contents button {
+  color: #49557e;
+  font-weight: 600;
+  background-color: white;
+  padding: 1vw 2.3vw;
+  min-padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: max(1vw, 13px);
+  transition: 0.3s;
 }
 
-/* Small devices (landscape phones, ≥576px) */
-@media (min-width: 550px) and (max-width: 767.98px) { 
-    .header{
-        margin-top: 9dvh;
-    }
-    .header h1{
-        font-size: 2.5rem;
-    }
+.header-contents button:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
 }
 
-/* Medium devices (tablets, ≥768px) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
-    .header{
-        margin-top: 8dvh;
-    }
-    .header h1{
-        font-size: 3rem;
-    }
-    .header p{
-        width: 50%;
-        font-size: 1rem;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Large devices (desktops, ≥992px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .header{
-        margin-top: 7dvh;
-    }
-    .header h1{
-        font-size: 4rem;
-    }
-    .header p{
-        font-size: 1.3rem;
-    }
-}
-
-/* Extra large devices (large desktops, ≥1200px) */
-@media (min-width: 1200px) { 
-    .header{
-        width: 70%;
-        height: 70dvh;
-        margin-top: 9dvh;
-    }
-    .header::before{
-        background-size: cover;
-    }
-    .header h1{
-        font-size: 3rem;
-    }
-    .header p{
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 1500px) {
-    .header{
-        width: 80%;
-        height: 90dvh;
-        margin-top: 9vh;
-    }
+@media (max-width: 750px) {
+  .header-contents {
+    max-width: 80%;
+    left: 30px;
+  }
 }

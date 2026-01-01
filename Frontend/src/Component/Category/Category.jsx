@@ -1,10 +1,8 @@
 import React from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { category } from "../../assets/assets";
 import "./Category.css";
 
 const Category = ({ selectedCategory, setSelectedCategory }) => {
-
   const handleCategoryClick = (cat) => {
     if (selectedCategory === cat) {
       setSelectedCategory("All"); // Toggle OFF
@@ -21,11 +19,19 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
           return (
             <div
               key={index}
-              className={item.name === selectedCategory ? 'category-type active' : 'category-type'}
-            //   className="category-type"
+              className={
+                item.name === selectedCategory
+                  ? "category-type active"
+                  : "category-type"
+              }
+              //   className="category-type"
               onClick={() => handleCategoryClick(item.name)}
             >
-              <img className="category-type-image" src={item.img_src}></img>
+              <img
+                className="category-type-image"
+                src={item.img_src}
+                alt={item.name}
+              ></img>
               <p className="category-type-name">{item.name}</p>
             </div>
           );

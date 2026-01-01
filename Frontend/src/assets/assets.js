@@ -155,6 +155,7 @@ export const photo = {
     image: businessManPhoto
 }
 
+
 export const logo = {
   image: logoimg
 }
