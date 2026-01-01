@@ -1,0 +1,22 @@
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+sqlmodel
+psycopg2-binary        # use this if PostgreSQL
+# sqlite is built-in, no package needed
+
+# Authentication & Security
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart      # required for file uploads
+
+# Environment variables
+python-dotenv
+
+# ImageKit SDK
+imagekitio
+
+# Validation & utilities
+pydantic
