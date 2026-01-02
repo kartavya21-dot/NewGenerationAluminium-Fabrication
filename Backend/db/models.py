@@ -16,8 +16,6 @@ class Category(SQLModel, table=True):
     name: str = Field(index=True)
     image_url: str
 
-    products: List["Product"] = Relationship(back_populates="category")
-
 class Product(SQLModel, table=True):
     __tablename__ = "product"
 

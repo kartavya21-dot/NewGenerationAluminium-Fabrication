@@ -9,7 +9,6 @@ psycopg2-binary        # use this if PostgreSQL
 
 # Authentication & Security
 python-jose[cryptography]
-passlib[bcrypt]
 python-multipart      # required for file uploads
 
 # Environment variables
@@ -20,3 +19,6 @@ imagekitio
 
 # Validation & utilities
 pydantic
+passlib==1.7.4
+bcrypt==4.0.1
+requests

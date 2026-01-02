@@ -1,14 +1,12 @@
-from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, status
-import base64
-
+from fastapi import APIRouter, UploadFile, File, Depends, HTTPException, status, Query
 from deps.auth import get_current_admin
-from services.imagekit_service import imagekit
-
-
-router = APIRouter(
-    prefix="/upload",
-    tags=["Upload"]
+from services.imagekit_service import (
+    upload_image_to_imagekit,
+    delete_image_from_imagekit,
+    list_images_from_imagekit
 )
+
+router = APIRouter(prefix="/upload", tags=["Upload"])
 
 
 @router.post("/image")
@@ -16,47 +14,111 @@ async def upload_image(
     file: UploadFile = File(...),
     admin=Depends(get_current_admin),
 ):
-    # --------------------
-    # Validate file type
-    # --------------------
     if file.content_type not in ["image/jpeg", "image/png", "image/webp"]:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Invalid image type",
-        )
+        raise HTTPException(status_code=400, detail="Invalid image type")
 
-    # --------------------
-    # Read & encode image
-    # --------------------
     file_bytes = await file.read()
 
-    if len(file_bytes) > 5 * 1024 * 1024:  # 5MB limit
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Image size must be less than 5MB",
-        )
+    if len(file_bytes) > 5 * 1024 * 1024:
+        raise HTTPException(status_code=400, detail="Image too large")
 
-    encoded_file = base64.b64encode(file_bytes).decode("utf-8")
-
-    # --------------------
-    # Upload to ImageKit
-    # --------------------
     try:
-        result = imagekit.upload(
-            file=encoded_file,
-            file_name=file.filename,
-            folder="/products",
+        result = upload_image_to_imagekit(
+            file_bytes=file_bytes,
+            filename=file.filename,
         )
-    except Exception:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Image upload failed",
-        )
+    except Exception as e:
+        print("ImageKit upload error:", e)
+        raise HTTPException(status_code=500, detail="Image upload failed")
 
-    # --------------------
-    # Return URL + file_id
-    # --------------------
     return {
         "url": result["url"],
         "file_id": result["fileId"],
     }
+
+@router.post("/image-bulk")
+async def upload_image_bulk(
+    files: list[UploadFile] = File(...),
+    admin=Depends(get_current_admin),
+):
+    results = []
+
+    for file in files:
+        # 1️⃣ Validate type
+        if file.content_type not in ["image/jpeg", "image/png", "image/webp"]:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Invalid image type: {file.filename}",
+            )
+
+        # 2️⃣ Read file
+        file_bytes = await file.read()
+
+        # 3️⃣ Validate size (per file)
+        if len(file_bytes) > 5 * 1024 * 1024:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Image too large: {file.filename}",
+            )
+
+        # 4️⃣ Upload
+        try:
+            result = upload_image_to_imagekit(
+                file_bytes=file_bytes,
+                filename=file.filename,
+            )
+        except Exception as e:
+            print("ImageKit upload error:", e)
+            raise HTTPException(
+                status_code=500,
+                detail=f"Failed to upload {file.filename}",
+            )
+
+        # 5️⃣ Collect result
+        results.append({
+            "url": result["url"],
+            "file_id": result["fileId"],
+            "name": file.filename,
+        })
+
+    return results
+
+
+@router.delete("/image/{file_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_image(
+    file_id: str,
+    admin=Depends(get_current_admin),
+):
+    try:
+        delete_image_from_imagekit(file_id)
+    except Exception as e:
+        print("ImageKit delete error:", e)
+        raise HTTPException(
+            status_code=500,
+            detail="Image deletion failed",
+        )
+    
+@router.get("/images")
+def list_images(
+    limit: int = Query(50, le=100),
+    skip: int = Query(0),
+    admin=Depends(get_current_admin),
+):
+    try:
+        images = list_images_from_imagekit(limit=limit, skip=skip)
+    except Exception as e:
+        print("ImageKit list error:", e)
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to fetch images",
+        )
+
+    return [
+        {
+            "file_id": img["fileId"],
+            "url": img["url"],
+            "name": img["name"],
+            "size": img["size"],
+        }
+        for img in images
+    ]
