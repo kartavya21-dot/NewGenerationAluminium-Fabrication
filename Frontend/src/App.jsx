@@ -14,7 +14,7 @@ import { menu_items } from "./assets/assets";
 
 function App() {
   return (
-    <BrowserRouter basename="/NewGenerationAluminium-Fabrication">
+    <Router>
       <div className="app">
         <Navbar />
         <Routes>
@@ -23,7 +23,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
