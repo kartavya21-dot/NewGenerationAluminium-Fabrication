@@ -8,11 +8,11 @@ const Footer = () => {
                 <li>Whatsapp</li>
                 <li>Instagram</li>
                 <li>Facebook</li>
-                <li>+91 78976-32287</li>
+                <li>+91 99930-63967</li>
             </ul>
         </div>
         <div className="address">
-            <p>123, Near Kailadevi Road, 450001, Dewas</p>
+            <p>54-A Ganga Nagar, Near GN Furniture, Dewas(MP)</p>
         </div>
     </div>
   )

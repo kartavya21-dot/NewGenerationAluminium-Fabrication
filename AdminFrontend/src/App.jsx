@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/DashBoard";
 import Images from "./pages/Images";
@@ -7,9 +7,17 @@ import Products from "./pages/Products";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const isAuthenticated = !!localStorage.getItem("token");
+
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      {/* Root route */}
+      <Route
+        path="/"
+        element={
+          isAuthenticated ? <Navigate to="/dashboard" replace /> : <Login />
+        }
+      />
 
       <Route
         path="/dashboard"

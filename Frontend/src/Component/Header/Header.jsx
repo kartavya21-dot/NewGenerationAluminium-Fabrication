@@ -11,12 +11,10 @@ const Header = () => {
         <p>
           You can get your desired doors, windows, and railings at our shop...
         </p>
-        <button onClick={() => window.location.href = "https://wa.me/9993036967?text=Hello%20I%20am%20interested%20in%20your%20services"}>Contact us</button>
+        <button onClick={() => window.location.href = "https://wa.me/919993063967?text=Hello%20I%20am%20interested%20in%20your%20services"}>Contact us</button>
       </div>
     </div>
   );
 };
 
 export default Header;
-
-// https://wa.me/9993036967?text=Hello%20I%20am%20interested%20in%20your%20services
