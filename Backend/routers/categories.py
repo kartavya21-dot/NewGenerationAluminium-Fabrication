@@ -6,7 +6,7 @@ from db.models import Category
 from schemas.category import CategoryCreate, CategoryResponse, CategoryUpdate
 from deps.auth import get_current_admin
 
-router = APIRouter(prefix="/categories", tags=["Categores"])
+router = APIRouter(prefix="/categories", tags=["Categories"])
 
 
 @router.get("/", response_model=list[CategoryResponse])
@@ -27,7 +27,7 @@ def create_category(
 ):
     category = Category(
         name=data.name,
-        image_url=data.image_url,
+        image=data.image.model_dump(),  # ✅ FIX
     )
 
     session.add(category)
@@ -35,6 +35,7 @@ def create_category(
     session.refresh(category)
 
     return category
+
 
 @router.put("/{category_id}", response_model=CategoryResponse)
 def update_category(
@@ -53,8 +54,9 @@ def update_category(
 
     if data.name is not None:
         category.name = data.name
-    if data.image_url is not None:
-        category.image_url = data.image_url
+
+    if data.image is not None:
+        category.image = data.image.model_dump()  # ✅ FIX
 
     session.add(category)
     session.commit()

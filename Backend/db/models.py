@@ -14,15 +14,16 @@ class Category(SQLModel, table=True):
 
     id: Optional[int] = Field(primary_key=True, default=None)
     name: str = Field(index=True)
-    image_url: str
+    
+    image: dict = Field(sa_column=Column(JSON))
 
 class Product(SQLModel, table=True):
     __tablename__ = "product"
 
     id: Optional[int] = Field(primary_key=True, default=None)
     name: str = Field(index=True)
-    price: str
 
+    price: str
     category_id: int = Field(foreign_key="category.id")
     
     images: List[dict] = Field(sa_column=Column(JSON))
