@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:8000";
+const API = "https://ngaf-backend.onrender.com";
 
 export const loginAdmin = async (email, password) => {
   const formData = new FormData();

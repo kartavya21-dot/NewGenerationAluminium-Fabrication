@@ -1,15 +1,31 @@
 import React from "react";
-import { category } from "../../assets/assets";
 import "./Category.css";
+import { useState } from "react";
+import { useEffect } from "react";
+import { fetchCategories } from "../../api/api";
 
 const Category = ({ selectedCategory, setSelectedCategory }) => {
   const handleCategoryClick = (cat) => {
     if (selectedCategory === cat) {
-      setSelectedCategory("All"); // Toggle OFF
+      setSelectedCategory("All");
     } else {
-      setSelectedCategory(cat); // Select new category
+      setSelectedCategory(cat);
     }
   };
+
+  const [category, setCategory] = useState([]);
+
+  useEffect(()=> {
+    const fetchCategory = async () => {
+      try {
+        const cat = await fetchCategories();
+        setCategory(cat);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    fetchCategory();
+  }, [])
 
   return (
     <div className="category" id="category">
@@ -20,16 +36,15 @@ const Category = ({ selectedCategory, setSelectedCategory }) => {
             <div
               key={index}
               className={
-                item.name === selectedCategory
+                item === selectedCategory
                   ? "category-type active"
                   : "category-type"
               }
-              //   className="category-type"
-              onClick={() => handleCategoryClick(item.name)}
+              onClick={() => handleCategoryClick(item)}
             >
               <img
                 className="category-type-image"
-                src={item.img_src}
+                src={item.image.image_url}
                 alt={item.name}
               ></img>
               <p className="category-type-name">{item.name}</p>
