@@ -146,6 +146,9 @@ NGAF/
 > ![Category Wise selection](./screenshots/image-2.png)
 > ![Detailed Product](./screenshots/image-3.png)
 > ![Admin Dashboard](./screenshots/image-4.png)
+> ![Image Gallery](./screenshots/image-5.png)
+> ![Category](./screenshots/image-6.png)
+> ![Product](./screenshots/image-7.png)
 
 ---
 
