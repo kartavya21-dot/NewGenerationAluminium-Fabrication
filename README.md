@@ -122,8 +122,6 @@ NGAF/
 
 * 🌐 User Website: **https://new-generation-aluminium-fabricatio.vercel.app/**
 
-> *(Add real links once deployed)*
-
 ---
 
 ## 🧠 What I Learned
